@@ -11,6 +11,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/bd521f7d5e.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../styles/s.css" />
   </head>
   <body>
@@ -33,6 +38,7 @@
         <h2>La Naturelle</h2>
         <p>MERN Full Stack Developer <span id="green-dot"></span></p>
       </section>
+      <!-- post, followers, and following -->
       <section class="intro-numbers">
         <div class="number-details">
           <h3>210</h3>
@@ -47,9 +53,78 @@
           <p>Following</p>
         </div>
       </section>
+      <!-- buttons - follow or message  -->
       <article class="artc-action">
-        <button type="button">Follow</button>
-        <button type="button">Message</button>
+        <button type="button" id="id-btn1">
+          <a href="../index.html" target="_blank">Follow</a>
+        </button>
+        <button type="button" id="id-btn2">
+          <a href="./createaccount.html" target="_blank">Message</a>
+        </button>
+      </article>
+      <!--  all, Photo, video-->
+      <article class="artc-gallery">
+        <div class="gallery-intro">
+          <p>All</p>
+          <p>Photo</p>
+          <p>Video</p>
+          <p><i class="fa-solid fa-ellipsis-vertical"></i></p>
+        </div>
+
+        <!-- gallery, images, gifs and videos -->
+        <div class="gallery-media">
+          <div class="media-container">
+            <img
+              src="https://images.pexels.com/photos/1181360/pexels-photo-1181360.jpeg"
+              alt="Christina Morillo"
+            />
+          </div>
+          <div class="media-container">
+            <video controls>
+              <source src="../videos/dimitat-dimitov.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="media-container">
+            <img
+              src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjF2eXdheDFsMGN2dGRrOTJsZzdzbXdkNDM3OWQ2MjAxc3NsYTcydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bGgsc5mWoryfgKBx1u/giphy.webp"
+              alt="coding"
+            />
+          </div>
+
+          <div class="media-container">
+            <img
+              src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg"
+              alt="Christina Morillo"
+            />
+          </div>
+          <div class="media-container">
+            <video src="../videos/mikhail-nilov.mp4" controls></video>
+          </div>
+          <div class="media-container">
+            <img
+              src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg"
+              alt="Kevin Ku"
+            />
+          </div>
+          <div class="media-container">
+            <img
+              src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg"
+              alt="Pixabay"
+            />
+          </div>
+          <div class="media-container">
+            <img src="../images/pexels-fauxels.jpg" alt="Fauxels" />
+          </div>
+          <div class="media-container">
+            <img src="../images/pexels-pixabay-270637.jpg" alt="Fauxels" />
+          </div>
+          <div class="media-container">
+            <img
+              src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjZmOGxpdzJhenR0czNhaWx0ZzYzNXBqbWRmcjI2Ymtzc3F0NGhlbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjI105rmEC22CJFK/giphy.webp"
+              alt="Iverson"
+            />
+          </div>
+        </div>
       </article>
     </div>
 
