@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* variables */
+:root {
+  /* colors  pallette*/
+  --clr-calamansi: #faffaf;
+  --clr-cornflower: #96c9f4;
+  --clr-brilliant-azure: #3fa2f6;
+  --clr-green-blue: #0f67b1;
+
+  /* extra */
+  --clr-bondi-blue: #00a1b9;
+  --clr-french-blue: #0072b5;
+  --clr-frosty-blue: #cce9e4;
+
+  /* font */
+  --fnt-montserrat: "Montserrat", sans-serif;
+  --fnt-source-code-pro: "Source Code Pro", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100;
+  /* body */
+  body {
+    /* wrapper */
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--clr-frosty-blue);
+      /* display flex */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* display flex */
+
+      /* container */
+      .container {
+        background-color: #fff;
+        width: 50%;
+        height: auto;
+        border-radius: 5px;
+        box-sh
+        padding: 2rem;
+
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+
+        /* intro */
+        .intro {
+          text-align: center;
+          h1 {
+            font: normal 700 2rem/1.2 var(--fnt-montserrat);
+            color: var(--clr-green-blue);
+          }
+        }
+      }
+    }
+  }
+}
