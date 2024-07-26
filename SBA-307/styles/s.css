@@ -39,18 +39,15 @@ html {
 
   /* body */
   body {
-    /* wrapper */
+    /* wrapper - landing page*/
     .wrapper {
       width: 100vw;
       height: 100vh;
       background-color: var(--clr-frosty-blue);
-      /* display flex */
       display: flex;
       flex-direction: column;
       justify-content: center;
-      /* display flex */
-
-      /* container */
+      /* container — landing page*/
       .container {
         width: 95%;
         height: auto;
@@ -86,7 +83,6 @@ html {
             input,
             button {
               display: block;
-
               outline: none;
               border: none;
               width: 100%;
@@ -112,7 +108,6 @@ html {
                 }
               }
             }
-
             button[type="submit"] {
               background: var(--clr-french-blue);
               color: var(--clr-white);
@@ -126,13 +121,11 @@ html {
                 box-shadow: -2px 2px 4px var(--clr-Mohair-soft-blue);
               }
             }
-
             #id-create {
               width: 70%;
               margin: auto;
               background: var(--clr-carribean-green);
             }
-
             p {
               text-align: center;
               transition: 1s ease-in-out;
@@ -150,6 +143,46 @@ html {
             }
           }
         }
+      }
+    }
+
+    /* wrapper-other */
+    .wrapper-other {
+      background-color: var(--clr-frosty-blue);
+      width: 100%;
+      overflow: hidden;
+
+      /* header */
+      header {
+        width: inherit;
+        height: 250px;
+        position: relative;
+      }
+
+      header img,
+      .profile-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* profile image */
+      .profile-img {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        outline: 5px dashed var(--clr-white);
+        outline-offset: 5px;
+        border-radius: 50%;
+        position: relative;
+        bottom: 100px;
+      }
+
+      .profile-img img {
+        /* padding: 5px; */
+        /* box-shadow: -4px 4px 8px 2px var(--clr-pure-gray); */
+
+        border-radius: 50%;
       }
     }
   }
