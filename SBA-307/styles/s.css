@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+/* google font */
+
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* variables */
 :root {
   /* colors  pallette*/
@@ -11,20 +15,28 @@
   --clr-cornflower: #96c9f4;
   --clr-brilliant-azure: #3fa2f6;
   --clr-green-blue: #0f67b1;
+  --clr-white: #fff;
 
   /* extra */
   --clr-bondi-blue: #00a1b9;
   --clr-french-blue: #0072b5;
   --clr-frosty-blue: #cce9e4;
+  --clr-Mohair-soft-blue: #97b2b7;
+  --clr-carribean-green: #00cc99;
+  --clr-pure-gray: #808080;
+  --clr-natural-black: #111810;
+  --clr-winter-black: #20211a;
 
   /* font */
   --fnt-montserrat: "Montserrat", sans-serif;
-  --fnt-source-code-pro: "Source Code Pro", monospace;
+  --fnt-hind: "Hind", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 100;
+  letter-spacing: 1px;
+
   /* body */
   body {
     /* wrapper */
@@ -40,23 +52,96 @@ html {
 
       /* container */
       .container {
-        background-color: #fff;
-        width: 50%;
+        width: 95%;
         height: auto;
-        border-radius: 5px;
-        box-sh
         padding: 2rem;
 
-        /* display: flex;
+        display: flex;
         flex-direction: column;
-        justify-content: center; */
+        justify-content: center;
 
         /* intro */
         .intro {
+          margin-bottom: 2rem;
           text-align: center;
           h1 {
-            font: normal 700 2rem/1.2 var(--fnt-montserrat);
-            color: var(--clr-green-blue);
+            font: normal 700 2.5rem/2 var(--fnt-montserrat);
+            color: var(--clr-french-blue);
+          }
+          p {
+            font: normal 400 1.25rem/1.2 var(--fnt-hind);
+            color: var(--clr-natural-black);
+          }
+        }
+
+        /* user action */
+        .user-action {
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: -6px 6px 12px -1px var(--clr-Mohair-soft-blue);
+          padding: 2rem;
+
+          /* form */
+          .action-form {
+            input {
+              display: block;
+              width: 100%;
+              height: 48px;
+              line-height: 48px;
+              margin-bottom: 1rem;
+              outline: none;
+              border: none;
+              border-radius: 5px;
+              transition: 300ms ease-in-out;
+
+              &[type="text"],
+              &[type="password"] {
+                color: var(--clr-winter-black);
+                border: 1px solid var(--clr-Mohair-soft-blue);
+                font: normal 400 1.1rem var(--fnt-hind);
+                padding: 0 1rem;
+                transition-property: box-shaddow, outline, border;
+
+                &:hover {
+                  box-shadow: -2px 2px 4px var(--clr-Mohair-soft-blue);
+                  outline: solid 1px var(--clr-brilliant-azure);
+                  border: none;
+                }
+              }
+
+              &[type="button"] {
+                background: var(--clr-french-blue);
+                color: var(--clr-white);
+                font: normal 500 1.25rem var(--fnt-hind);
+
+                &:hover {
+                  opacity: 0.85;
+                  box-shadow: -2px 2px 4px var(--clr-Mohair-soft-blue);
+                }
+              }
+
+              &[value="Create New Account"] {
+                width: 70%;
+                margin: auto;
+                background: var(--clr-carribean-green);
+              }
+            }
+
+            p {
+              text-align: center;
+              transition: 1s ease-in-out;
+              a {
+                text-decoration: none;
+                transition-property: text-underline-offset, text-decoration,
+                  color;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                  text-underline-offset: 5px;
+                  text-decoration: underline;
+                  color: var(--clr-brilliant-azure);
+                }
+              }
+            }
           }
         }
       }
