@@ -109,7 +109,7 @@ html {
                 }
               }
             }
-            button[type="submit"] {
+            button[type="button"] {
               background: var(--clr-french-blue);
               color: var(--clr-white);
               font: normal 500 1.25rem var(--fnt-hind);
@@ -132,10 +132,11 @@ html {
               transition: 1s ease-in-out;
               a {
                 text-decoration: none;
-                transition-property: text-underline-offset, text-decoration,
+                transition-property: color, text-underline-offset, text-decoration,
                   color;
                 transition: 0.3s ease-in-out;
                 &:hover {
+                  color: var(--clr-brilliant-azure);
                   text-underline-offset: 5px;
                   text-decoration: underline;
                   color: var(--clr-brilliant-azure);
