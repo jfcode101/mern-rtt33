@@ -51,7 +51,7 @@ html {
       /* container — landing page*/
       .container {
         width: 95%;
-        height: auto;
+        height: 90vh;
         padding: 2rem;
 
         display: flex;
@@ -342,6 +342,10 @@ html {
 }
 
 @media only screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 750px;
+    margin: auto;
+  }
   .wrapper-other {
     .intro-other,
     .intro-numbers,
@@ -365,6 +369,10 @@ html {
 }
 
 @media only screen and (min-width: 920px) {
+  .wrapper {
+    max-width: 750px;
+    margin: auto;
+  }
   .wrapper-other {
     .intro-other,
     .intro-numbers,
@@ -388,6 +396,11 @@ html {
 }
 
 @media only screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 750px;
+    margin: auto;
+  }
+
   .wrapper-other {
     .intro-other,
     .intro-numbers,
