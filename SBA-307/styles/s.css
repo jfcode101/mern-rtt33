@@ -132,11 +132,10 @@ html {
               transition: 1s ease-in-out;
               a {
                 text-decoration: none;
-                transition-property: color, text-underline-offset, text-decoration,
+                transition-property: text-underline-offset, text-decoration,
                   color;
                 transition: 0.3s ease-in-out;
                 &:hover {
-                  color: var(--clr-brilliant-azure);
                   text-underline-offset: 5px;
                   text-decoration: underline;
                   color: var(--clr-brilliant-azure);
@@ -283,7 +282,10 @@ html {
             align-items: center;
             color: var(--clr-winter-black);
             cursor: pointer;
+            transition-property: color, text-decoration, text-underline-offset;
+            transition: 0.3s ease-in-out;
             &:hover {
+              color: var(--clr-french-blue);
               text-decoration: underline solid var(--clr-french-blue) 2px;
               text-underline-offset: 5px;
             }
