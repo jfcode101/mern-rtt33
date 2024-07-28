@@ -46,6 +46,10 @@ html {
     color: var(--clr-pure-gray);
   }
 
+  h2 {
+    font: normal 700 1.75rem var(--fnt-montserrat);
+  }
+
   /* body */
   body {
     background-color: var(--clr-frosty-blue);
@@ -198,9 +202,7 @@ html {
         position: inherit;
         bottom: 80px;
         text-align: center;
-        h2 {
-          font: normal 700 1.75rem var(--fnt-montserrat);
-        }
+
         p {
           font-size: 1rem;
           #green-dot {
@@ -332,7 +334,7 @@ html {
 
             cursor: pointer;
             transition-property: transform;
-            transition: .5s ease-in-out;
+            transition: 0.5s ease-in-out;
 
             &:hover {
               transform: scale(1.2);
@@ -345,7 +347,6 @@ html {
               object-fit: cover;
               border-radius: 5px;
             }
-
           }
         }
       }
@@ -355,11 +356,13 @@ html {
     .create-wrapper {
       .create-container {
         max-width: 650px;
-        min-height: 100vh;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 2rem auto;
+        article {
+          margin: 2rem 0;
+          h2 {
+            text-align: center;
+          }
+        }
       }
     }
   }
@@ -390,6 +393,7 @@ html {
       max-width: 550px;
     }
   }
+
   .wrapper-other {
     .intro-other,
     .intro-numbers,
@@ -417,6 +421,7 @@ html {
     max-width: 750px;
     margin: auto;
   }
+
   .wrapper-other {
     .intro-other,
     .intro-numbers,
@@ -442,6 +447,11 @@ html {
 @media only screen and (min-width: 1200px) {
   .wrapper {
     max-width: 750px;
+    margin: auto;
+  }
+
+  .wrappers {
+    max-width: 1000px;
     margin: auto;
   }
 
