@@ -23,7 +23,7 @@
   --clr-frosty-blue: #cce9e4;
   --clr-Mohair-soft-blue: #97b2b7;
   --clr-carribean-green: #00cc99;
-  --clr-pure-gray: #808080;
+  --clr-pure-gray: #5a5a5a;
   --clr-natural-black: #111810;
   --clr-winter-black: #20211a;
 
@@ -37,23 +37,29 @@ html {
   font-size: 100;
   letter-spacing: 1px;
 
+  input::placeholder {
+    letter-spacing: 1px;
+    color: var(--clr-pure-gray);
+  }
+
   /* body */
   body {
     background-color: var(--clr-frosty-blue);
     /* wrapper - landing page*/
     font-family: var(--fnt-hind);
+    /* landing page wraper */
     .wrapper {
       width: 100vw;
       height: 100vh;
       display: flex;
-      flex-direction: column;
+      /* flex-direction: column; */
       justify-content: center;
       /* container — landing page*/
       .container {
-        width: 95%;
+        width: 95vh;
+        margin: auto;
         height: 90vh;
         padding: 2rem;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -147,7 +153,7 @@ html {
       }
     }
 
-    /* wrapper-other */
+    /* wrapper-other — */
     .wrapper-other {
       width: 100%;
       height: auto;
@@ -310,7 +316,6 @@ html {
             width: 300px;
             height: 300px;
             background-color: transparent;
-            border: 1px solid var(--clr-white);
             border-radius: 5px;
             box-shadow: 2px 2px 4px var(--clr-Mohair-soft-blue);
 
@@ -319,9 +324,22 @@ html {
               width: 100%;
               height: 100%;
               object-fit: cover;
+              border-radius: 5px;
             }
           }
         }
+      }
+    }
+
+    /* sign-up form wrapper */
+    .create-wrapper {
+      .create-container {
+        max-width: 650px;
+        min-height: 100vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -348,6 +366,10 @@ html {
   .wrapper {
     max-width: 750px;
     margin: auto;
+
+    .container {
+      max-width: 550px;
+    }
   }
   .wrapper-other {
     .intro-other,
