@@ -355,7 +355,7 @@ html {
     /* sign-up form wrapper */
     .create-wrapper {
       .create-container {
-        max-width: 650px;
+        max-width: 750px;
         margin: 2rem auto;
         article {
           margin: 2rem 0;
@@ -380,6 +380,38 @@ html {
           min-height: 250px;
         }
       }
+    }
+  }
+
+  .create-wrapper {
+    width: 95vw;
+    margin: auto;
+    .create-container {
+      .form-redo {
+        width: inherit;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .create-wrapper {
+    width: 95vw;
+    margin: auto;
+    .create-container {
+      .form-redo {
+        width: inherit;
+        margin: auto;
+      }
+    }
+  }
+
+  .info-wraps {
+    width: 100vw;
+
+    table {
+      width: 100%;
     }
   }
 }
@@ -411,6 +443,22 @@ html {
           min-width: 325px;
           min-height: 325px;
         }
+      }
+    }
+  }
+
+  .info-wraps {
+    max-width: 750px;
+    margin: auto;
+  }
+
+  .create-wrapper {
+    width: 95vw;
+    margin: auto;
+    .create-container {
+      .form-redo {
+        width: inherit;
+        margin: auto;
       }
     }
   }
