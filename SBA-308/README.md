@@ -18,3 +18,65 @@ The script is designed to run in the console and automatically generates results
 > Create a script that gathers data, processes it, and then outputs a consistent result as decribed by a specification.
 
 ### Concepts Example
+
+1. **if else statement**
+
+```
+if(){
+    // statement(s)
+} else {
+    // statement(s)
+}
+```
+
+2. **for loop**
+
+```
+for(initializatio; condition; afterthought){
+    // statement(s)
+}
+```
+
+3. **for in loop**
+
+```
+for(const element in elements){
+    // statement(s)
+}
+```
+
+4. **forEach()**
+
+```
+array.forEach((el) => {
+    // statement(s)
+})
+```
+
+5.**break**
+
+```
+// statement(s)
+break;
+```
+
+6. **try/catch**
+
+```
+try{
+    // statement(s)
+}catch(error){
+    // statements
+}
+```
+
+7. **throw**
+
+```
+throw "error message"
+```
+
+### links
+
+1. [project link](https://github.com/jfcode101/mern-rtt33/tree/main/SBA-308)
+1. [GitHub profile](https://github.com/jfcode101)
