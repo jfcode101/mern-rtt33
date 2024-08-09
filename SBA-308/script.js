@@ -80,11 +80,15 @@ function getLearnerData(course, ag, submissions) {
   // declare and initialize local function scope variables
   const result = [];
   const avg = []; // average
-  const assignmentIds = [];
+  const assignmentIds = []; // array to store the assignments IDs from assignments group
+  const learnerIds = []; // array to store the learner_id
+  const submittesAssignmentIds = [];
 
   // initialize a variable to store course info id, and console it
   const courseId = course.id;
   console.log("The course id is: ", courseId);
+
+  // ************************ Assignment Group information ************************
 
   // initialize a variable to store assignment group id, and console it
   const agId = ag.id;
@@ -98,8 +102,34 @@ function getLearnerData(course, ag, submissions) {
   ag.assignments.forEach((assignment) => {
     assignmentIds.push(assignment.id);
   });
+
   // log out all the assignments group id
+  console.log("\nAssignmentGroup assignments ids\n");
   console.log(assignmentIds);
+
+  // ************************ Learner Submission information ************************
+  const learneiDObj = {};
+  const submittedObjId = {};
+
+  // for of loop through the learner submissions to collect unique learner_ids
+  for (const submitted of submissions) {
+    const learneId = submitted.learner_id;
+    const assignId = submitted.assignment_id;
+    // check if the id exist
+    if (!learneiDObj[learneId] && !submittedObjId[assignId]) {
+      // if the id is seen, martk it as een
+      learneiDObj[learneId] = true;
+      submittedObjId[assignId] = true;
+      // add the ids to the arrays
+      learnerIds.push(learneId);
+      submittesAssignmentIds.push(assignId);
+    }
+  }
+  // log out the ids
+  console.log("\nLearnerSubmissions learner ids\n");
+  console.log(learnerIds);
+  console.log("\nLearnerSubmissions assignments ids\n");
+  console.log(submittesAssignmentIds);
 
   // verify that the course exits, if not throw an error
   if (courseId !== agCourseId) {
