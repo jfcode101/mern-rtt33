@@ -91,10 +91,41 @@ function getLearnerData(course, ag, submissions) {
       //   const studentScore = submitted.submission.score;
       const studentScore = Number(submitted.submission.score); // score should always be a number
 
-      //   #4: check if the student score is not less than zero
+      //   #5: check if the student score is not less than zero
       if (studentScore < 0) {
         throw `Error — The student with ID ${studentId}, has score is ${studentScore} on assignment ID ${assignmentID} which is less than zero. Verify.`;
       }
+
+      //   #6: check if there's an entry
+      if (!studentScores[studentId]) {
+        studentScores[studentId] = {
+          id: studentId,
+          totalScore: 0,
+          pointPossible: 0,
+          1: 0,
+          2: 0,
+          //   scores: {},
+        };
+      }
+
+      //   #7: now search through all the assignments group and find a match
+      //   for that given assignment id
+      let assignment;
+      for (let i = 0; ag.assignments.length; i++) {
+        // #8: check if the AssignmentGroup's assignments ID at a certain position is the same as
+        // the LearnerSubmissions assignment ID
+        if (ag.assignments[i] === assignmentID) {
+          // assignment found
+          assignment = ag.assignments[i];
+          // #9: now, since we have the assignment break  and exit the loop
+          break;
+        } else if (!assignment) {
+          throw `Error - Assignment with ID ${assignmentID} for student id ${studentId} is not found.`;
+        }
+      }
+
+
+      
     }
   } catch (err) {
     console.error(`Error — ${err}`);
