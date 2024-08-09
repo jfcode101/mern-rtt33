@@ -81,8 +81,8 @@ function getLearnerData(course, ag, submissions) {
   const result = [];
   const avg = []; // average
   const assignmentIds = []; // array to store the assignments IDs from assignments group
-  const learnerIds = []; // array to store the learner_id
-  const submittesAssignmentIds = [];
+  // const learnerIds = []; // array to store the learner_id
+  // const submittesAssignmentIds = [];
 
   // initialize a variable to store course info id, and console it
   const courseId = course.id;
@@ -108,23 +108,13 @@ function getLearnerData(course, ag, submissions) {
   console.log(assignmentIds);
 
   // ************************ Learner Submission information ************************
-  const learneiDObj = {};
-  const submittedObjId = {};
 
-  // for of loop through the learner submissions to collect unique learner_ids
-  for (const submitted of submissions) {
-    const learneId = submitted.learner_id;
-    const assignId = submitted.assignment_id;
-    // check if the id exist
-    if (!learneiDObj[learneId] && !submittedObjId[assignId]) {
-      // if the id is seen, martk it as een
-      learneiDObj[learneId] = true;
-      submittedObjId[assignId] = true;
-      // add the ids to the arrays
-      learnerIds.push(learneId);
-      submittesAssignmentIds.push(assignId);
-    }
-  }
+  const learnerIds = handleSubmissionsIDs(submissions, "learner_id");
+  const submittesAssignmentIds = handleSubmissionsIDs(
+    submissions,
+    "assignment_id"
+  );
+
   // log out the ids
   console.log("\nLearnerSubmissions learner ids\n");
   console.log(learnerIds);
@@ -166,3 +156,17 @@ function getLearnerData(course, ag, submissions) {
 
 const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
 console.log(result);
+
+// function to process learnerSubmissions
+function handleSubmissionsIDs(submissions, id) {
+  const elementIdsObj = {}; // object to store learnerSubmissions object ids
+  // loop through the submissions
+  submissions.forEach((submission) => {
+    // the id will access the desired id
+    const idvalue = submission[id];
+    // store the id in the object to ensure its not duplicated
+    elementIdsObj[idvalue] = true;
+  });
+  // convert the key of object back to an array
+  return Object.keys(elementIdsObj).map(Number);
+}
