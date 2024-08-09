@@ -77,9 +77,25 @@ const LearnerSubmissions = [
 ];
 
 function getLearnerData(course, ag, submissions) {
-  // #1: try/catch to get error
+  // #1: declare and initialize function scope variables
+  const result = []; // array that stores the reuslt value
+  const studentScores = {}; // object that stores the student scores - learner scorers
+
+  // #2: try/catch to get error for the whole function
   try {
-    // #2: Declare and initialize function scope variables
+    // #3: for of loop to initialize Learner Submissions scores
+    for (const submitted of submissions) {
+      // #4: declare and initialize for of block scope variables
+      const studentId = submitted.learner_id;
+      const assignmentID = submitted.assignment_id;
+      //   const studentScore = submitted.submission.score;
+      const studentScore = Number(submitted.submission.score); // score should always be a number
+
+      //   #4: check if the student score is not less than zero
+      if (studentScore < 0) {
+        throw `Error — The student with ID ${studentId}, has score is ${studentScore} on assignment ID ${assignmentID} which is less than zero. Verify.`;
+      }
+    }
   } catch (err) {
     console.error(`Error — ${err}`);
   }
