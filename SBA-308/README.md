@@ -17,4 +17,4 @@ The script is designed to run in the console and automatically generates results
 
 > Create a script that gathers data, processes it, and then outputs a consistent result as decribed by a specification.
 
-###
+### Concepts Example
