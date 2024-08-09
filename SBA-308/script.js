@@ -84,8 +84,30 @@ function getLearnerData(course, ag, submissions) {
   console.log("The course id is: ", course.id);
   console.log("The assignment group for course id is: ", ag.course_id);
 
+  // get to know where my assignments group id are located
+  console.log("Assignment group assignments id at index 0: ", ag.assignments[0].id);
+  console.log("Assignment group assignments id at index 0: ", ag.assignments[1].id);
+  console.log("Assignment group assignments id at index 0: ", ag.assignments[2].id);
+
+  // get to know where my learner submissions assidnment id are located
+  console.log("Learner submissions assignments id at index 0: ", submissions[0].assignment_id);
+  console.log("Learner submissions assignments id at index 1: ", submissions[1].assignment_id);
+  console.log("Learner submissions assignments id at index 2: ", submissions[2].assignment_id);
+
+
+
+
   // verify that the course exits, if not throw an error
-  if(course.id === ag.course_id)
+  if (course.id !== ag.course_id) {
+    throw `Invalid assignment group: the course id ${course.id} does not match assignment group course id ${ag.course_id}`;
+  }
+
+  // try/catch to catch error in case they occur 
+  // try {
+    
+  // } catch (err) {
+  //   console.error(err)
+  // }
 
   return result;
 }
