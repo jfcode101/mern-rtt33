@@ -79,34 +79,38 @@ const LearnerSubmissions = [
 function getLearnerData(course, ag, submissions) {
   // declare and initialize local function scope variables
   const result = [];
-  const avg = [];
+  const avg = []; // average
+  const assignmentIds = [];
 
-  console.log("The course id is: ", course.id);
-  console.log("The assignment group for course id is: ", ag.course_id);
+  // initialize a variable to store course info id, and console it
+  const courseId = course.id;
+  console.log("The course id is: ", courseId);
 
-  // get to know where my assignments group id are located
-  console.log("Assignment group assignments id at index 0: ", ag.assignments[0].id);
-  console.log("Assignment group assignments id at index 0: ", ag.assignments[1].id);
-  console.log("Assignment group assignments id at index 0: ", ag.assignments[2].id);
+  // initialize a variable to store assignment group id, and console it
+  const agId = ag.id;
+  console.log("Assignment group id is: ", agId);
 
-  // get to know where my learner submissions assidnment id are located
-  console.log("Learner submissions assignments id at index 0: ", submissions[0].assignment_id);
-  console.log("Learner submissions assignments id at index 1: ", submissions[1].assignment_id);
-  console.log("Learner submissions assignments id at index 2: ", submissions[2].assignment_id);
+  // initialize a variable to store assignment group course_id, and console it
+  const agCourseId = ag.course_id;
+  console.log("Assignment group course_id is: ", agCourseId);
 
-
-
+  // loop through assignments to get their IDs and store them in the array "assignmentIds"
+  ag.assignments.forEach((assignment) => {
+    assignmentIds.push(assignment.id);
+  });
+  // log out all the assignments group id
+  console.log(assignmentIds);
 
   // verify that the course exits, if not throw an error
-  if (course.id !== ag.course_id) {
-    throw `Invalid assignment group: the course id ${course.id} does not match assignment group course id ${ag.course_id}`;
+  if (courseId !== agCourseId) {
+    throw `Invalid assignment group: the course id ${courseId} does not match assignment group course id ${agCourseId}`;
   }
 
-  // try/catch to catch error in case they occur 
+  // try/catch to catch error in case they occur
   // try {
-    
+
   // } catch (err) {
-  //   console.error(err)
+  //   console.error(err);
   // }
 
   return result;
