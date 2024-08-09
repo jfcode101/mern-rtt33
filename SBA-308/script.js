@@ -78,7 +78,7 @@ const LearnerSubmissions = [
 
 function getLearnerData(course, ag, submissions) {
   // #1: declare and initialize function scope variables
-  const result = []; // array that stores the reuslt value
+  const result = []; // array that stores the result value
   const studentScores = {}; // object that stores the student scores - learner scorers
 
   // #2: try/catch to get error for the whole function
@@ -101,31 +101,47 @@ function getLearnerData(course, ag, submissions) {
         studentScores[studentId] = {
           id: studentId,
           totalScore: 0,
-          pointPossible: 0,
-          1: 0,
-          2: 0,
-          //   scores: {},
+          totalPossiblePoints: 0,
+          scores: {},
         };
       }
 
       //   #7: now search through all the assignments group and find a match
       //   for that given assignment id
-      let assignment;
+      let assignment = null;
       for (let i = 0; ag.assignments.length; i++) {
         // #8: check if the AssignmentGroup's assignments ID at a certain position is the same as
         // the LearnerSubmissions assignment ID
         if (ag.assignments[i] === assignmentID) {
           // assignment found
           assignment = ag.assignments[i];
-          // #9: now, since we have the assignment break  and exit the loop
+          // #9: now, since we have the assignment we wanted, let's break and exit the loop
           break;
+          // #10: if there' no assignment throw an error message
         } else if (!assignment) {
           throw `Error - Assignment with ID ${assignmentID} for student id ${studentId} is not found.`;
         }
       }
 
+      // #11: declare and initialize possible points
+      const possiblePoints = assignment.points_possible;
 
-      
+      //   #12: store each score
+      studentScores[studentId].scores[assignmentID] =
+        studentScore / possiblePoints;
+
+      // #13: updatte the total score and total possible points
+      studentScores[studentId].totalScore += studentScore;
+      studentScores[studentId].totalPossiblePoints += possiblePoints;
+    }
+
+    // #14: since we have all we need to calculate the average score, let's do that
+    //   we will use the for in loop
+    for (const id of studentScores) {
+      const student = studentScores[id];
+      const avg = student.totalScore / student.totalPossiblePoints;
+
+      //   #15: built the object that combine the whole result output
     }
   } catch (err) {
     console.error(`Error — ${err}`);
