@@ -77,10 +77,15 @@ const LearnerSubmissions = [
 ];
 
 function getLearnerData(course, ag, submissions) {
-  // create the result 
+  // declare and initialize local function scope variables
   const result = [];
-  
+  const avg = [];
 
+  console.log("The course id is: ", course.id);
+  console.log("The assignment group for course id is: ", ag.course_id);
+
+  // verify that the course exits, if not throw an error
+  if(course.id === ag.course_id)
 
   return result;
 }
