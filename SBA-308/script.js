@@ -170,3 +170,48 @@ function handleSubmissionsIDs(submissions, id) {
   // convert the key of object back to an array
   return Object.keys(elementIdsObj).map(Number);
 }
+
+// function to calculate to calculate the average scores
+function calculateAvgScores(submissions, assignmentGroup) {
+  const learnerScores = {};
+  const learnerPoints = {};
+
+  // forEach loop to iterate through each submission
+  submissions.forEach(({ learner_id, assignment_id, submission }) => {
+    const score = submission.score;
+
+    // initialize the learner's score and points if not already done
+    if (!learnerScores[learner_id]) {
+      learnerScores[learner_id] = 0;
+      learnerPoints[learner_id] = 0;
+    }
+
+    // calculate the total score
+    learnerScores[learner_id] += score;
+
+    // Find the corresponding assignment to get points_possible
+    // get the Points_possible using a for loop
+    let pointsPossible = 0; // Initialize pointsPossible
+    for (let i = 0; i < assignmentGroup.assignments.length; i++) {
+      if (assignmentGroup.assignments[i].id === assignment_id) {
+        pointsPossible = assignmentGroup.assignments[i].points_possible;
+        break; // Exit the loop once the assignment is found
+      }
+    }
+
+    // Add the points_possible to the learner's total points
+    learnerPoints[learner_id] += pointsPossible;
+  });
+
+  // Calculate the average scores for each learner
+  const averages = {};
+  for (const learner_id in learnerScores) {
+    const totalScore = learnerScores[learner_id];
+    const totalPoints = learnerPoints[learner_id];
+
+    // Calculate average if totalPoints is greater than 0 to avoid division by zero
+    averages[learner_id] = totalPoints > 0 ? totalScore / totalPoints : 0;
+  }
+
+  return averages;
+}
