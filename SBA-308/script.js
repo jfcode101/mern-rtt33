@@ -121,6 +121,10 @@ function getLearnerData(course, ag, submissions) {
   console.log("\nLearnerSubmissions assignments ids\n");
   console.log(submittesAssignmentIds);
 
+  // log out average score object
+  console.log("\nAverage object\n");
+  const avgObj = calculateAvgScores(submissions, ag);
+  console.log(avgObj);
   // verify that the course exits, if not throw an error
   if (courseId !== agCourseId) {
     throw `Invalid assignment group: the course id ${courseId} does not match assignment group course id ${agCourseId}`;
@@ -172,9 +176,10 @@ function handleSubmissionsIDs(submissions, id) {
 }
 
 // function to calculate to calculate the average scores
-function calculateAvgScores(submissions, assignmentGroup) {
+function calculateAvgScores(submissions, ag) {
   const learnerScores = {};
   const learnerPoints = {};
+  // const
 
   // forEach loop to iterate through each submission
   submissions.forEach(({ learner_id, assignment_id, submission }) => {
@@ -192,25 +197,26 @@ function calculateAvgScores(submissions, assignmentGroup) {
     // Find the corresponding assignment to get points_possible
     // get the Points_possible using a for loop
     let pointsPossible = 0; // Initialize pointsPossible
-    for (let i = 0; i < assignmentGroup.assignments.length; i++) {
-      if (assignmentGroup.assignments[i].id === assignment_id) {
-        pointsPossible = assignmentGroup.assignments[i].points_possible;
+    for (let i = 0; i < ag.assignments.length; i++) {
+      if (ag.assignments[i].id === assignment_id) {
+        pointsPossible = ag.assignments[i].points_possible;
         break; // Exit the loop once the assignment is found
       }
     }
 
-    // Add the points_possible to the learner's total points
+    // the sum of points_possible to the learner's total points
     learnerPoints[learner_id] += pointsPossible;
   });
 
-  // Calculate the average scores for each learner
+  // calculate the average scores for each learner
   const averages = {};
   for (const learner_id in learnerScores) {
     const totalScore = learnerScores[learner_id];
     const totalPoints = learnerPoints[learner_id];
 
-    // Calculate average if totalPoints is greater than 0 to avoid division by zero
-    averages[learner_id] = totalPoints > 0 ? totalScore / totalPoints : 0;
+    // calculate the average if totalPoints is greater than 0 to avoid division by zero
+    averages[learner_id] =
+      totalPoints > 0 ? Number((totalScore / totalPoints).toFixed(3)) : 0;
   }
 
   return averages;
