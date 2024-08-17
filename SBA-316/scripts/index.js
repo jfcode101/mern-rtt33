@@ -61,14 +61,14 @@ signUpTexts.forEach((item) => {
 });
 
 // --------------- form ---------------
-// --------------- add event listener ---------------
+// --------------- add {submit} event listener to the form ---------------
 formEl.addEventListener("submit", (e) => {
   // prevent default
   e.preventDefault();
   // boolean to set validity
   let isValid = true;
 
-  // get form inputs
+  // get form inputs from the form
   const fName = document.querySelector("#id-fname").value.trim();
   const lName = document.querySelector("#id-lname").value.trim();
   const email = document.querySelector("#id-email").value.trim();
@@ -141,11 +141,12 @@ formEl.addEventListener("submit", (e) => {
     isValid = false;
   }
 
-  // object to store user input into Local Storage
+  // -------- object to store user input into Local Storage --------
   const saveUserSingup = { fName, lName, email, usrName, pwd, pwd2 };
 
-  // ---- retrieve existing user from local storage
-  let userInfos = JSON.parse(localStorage.getItem("user")) || [];
+  // -------- retrieve existing user from local storage --------
+  //   let userInfos = JSON.parse(localStorage.getItem("user")) || [];
+  let userInfos = JSON.parse(localStorage.getItem("userInfos")) || [];
 
   if (!isValid) {
     //  if any of the input field doesn't meet the requirement return
@@ -153,17 +154,35 @@ formEl.addEventListener("submit", (e) => {
   } else {
     // add the new user to the array
     userInfos.push(saveUserSingup);
-    alert("You have successfully created an account!");
+
+    //  // now, save the updated array back to local storage
+    localStorage.setItem("userInfos", JSON.stringify(userInfos));
+    console.log(userInfos);
+
+    // cache some element from html
+    const artcSuccess = document.querySelector("#artc-sigin-success");
+    const paraSuccess = document.getElementById("id-para-success");
+    const btnOK = document.getElementById("id-btn-ok");
+
+    // use the variable
+    artcSuccess.style.display = "flex";
+    paraSuccess.textContent = "You have successfully created an account!";
+
+    // -------- click event when the user click on the ok button --------
+    btnOK.addEventListener("click", () => {
+      // hide the article success when the user clicks on it
+      artcSuccess.style.display = "none";
+    });
   }
 
-  // now, savae the updated array back to local storage
-  localStorage.setItem("userInfos", JSON.stringify(saveUserSingup));
+  // now, save the updated array back to local storage
+  //   localStorage.setItem("users", JSON.stringify(userInfos));
 
   // clear the form after submission
   formEl.reset();
 
-  // display them
-  alert("form submitted");
+  // display a message
+  //   alert("form submitted");
 });
 
-//  function that
+//  function that 

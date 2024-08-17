@@ -57,6 +57,35 @@ html {
     letter-spacing: 1px;
   }
 
+  button {
+    width: 250px;
+    transition-property: background, box-shadow;
+    transition: 500ms ease-in-out;
+  }
+  /* login button or any other button with the same class */
+  .btn-login {
+    background: transparent;
+    border: 1px solid;
+    color: var(--gray-asparagus-clr);
+
+    &:hover,
+    &:focus {
+      background: var(--white-clr);
+      box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
+    }
+  }
+  /* sign up button or any other button with the same class */
+  .btn-signup {
+    background: var(--gray-asparagus-clr);
+    color: var(--white-clr);
+    border: none;
+    &:hover,
+    &:focus {
+      background: #2f3f31;
+      box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
+    }
+  }
+
   ul {
     margin-bottom: 1rem;
     li {
@@ -81,6 +110,10 @@ html {
     text-align: center;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   /* ----- start: common classes -----*/
   .flex-rw-ct-ct {
     display: flex;
@@ -148,35 +181,6 @@ html {
         /* hero action */
         .hero-action {
           gap: 1rem;
-
-          button {
-            width: 250px;
-            transition-property: background, box-shadow;
-            transition: 500ms ease-in-out;
-          }
-          /* login button */
-          #btn-login {
-            background: transparent;
-            border: 1px solid;
-            color: var(--gray-asparagus-clr);
-
-            &:hover,
-            &:focus {
-              background: var(--white-clr);
-              box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
-            }
-          }
-          /* sign up button */
-          #btn-signup {
-            background: var(--gray-asparagus-clr);
-            color: var(--white-clr);
-            border: none;
-            &:hover,
-            &:focus {
-              background: #2f3f31;
-              box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
-            }
-          }
         }
       }
 
@@ -246,6 +250,7 @@ html {
             font: normal 300 0.75rem/1.2 var(--merriweather-fnt);
           }
 
+          /* submit button */
           #btn-submit {
             width: 100%;
             background: var(--gray-asparagus-clr);
@@ -260,6 +265,20 @@ html {
               background: #2f3f31;
               box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
             }
+          }
+        }
+
+        /* article success — appears when the user has successfully registered an account */
+        #artc-sigin-success {
+          display: none;
+          background-color: var(--white-clr);
+          color: var(--rich-bkack-clr);
+          margin-top: 1rem;
+          padding: 1rem 0;
+          height: auto;
+          border-radius: 2px;
+          p {
+            text-align: center;
           }
         }
       }
