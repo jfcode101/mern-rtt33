@@ -23,8 +23,8 @@
   <body>
     <!-- the wrapper class — the main container -->
     <main class="wrapper">
-      <!-- section : hero — the user sees this first-->
-      <section class="hero">
+      <!-- section: hero — the user sees this first-->
+      <section class="sect-hero">
         <article class="hero-intro">
           <h1>
             SBA-316 Book Lists
@@ -35,13 +35,54 @@
             fingertips.
           </p>
         </article>
-        <div class="hero-action flex-rw-ct-ct">
+        <div class="hero-action flex-cl-ct-ct">
           <button type="submit" id="btn-login">Log In</button>
           <button type="submit" id="btn-signup">Sign Up</button>
         </div>
       </section>
+      <!-- section: about us-->
+      <section class="sect-about" id="id-sect-about">
+        <h2>About us</h2>
+      </section>
       <!-- section: sign up form -->
-      <section id="signup-frm"></section>
+      <section class="sect-signup" id="signup">
+        <article class="artc-signup" id="id-artc-signup">
+          <h2>Join Our Community</h2>
+        </article>
+        <form action="">
+          <fieldset>
+            <legend>Your name</legend>
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="First name"
+            />
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              placeholder="last name"
+            />
+          </fieldset>
+          <input
+            type="email"
+            name="email"
+            id="id-email"
+            placeholder="example@email.com"
+          />
+          <fieldset>
+            <legend>choose a password</legend>
+            <input
+              type="password"
+              name="pword"
+              id="pword"
+              placeholder="password"
+            />
+            <input type="password" name="pword2" id="pword-2" />
+          </fieldset>
+        </form>
+      </section>
       <!-- section: bookList -->
       <section id="books"></section>
     </main>

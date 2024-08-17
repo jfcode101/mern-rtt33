@@ -34,107 +34,168 @@ html {
     text-align: center;
     margin-bottom: 1rem;
   }
+  h2 {
+    font: normal 700 1.65rem var(--opensans-fnt);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font: normal 600 1.25rem var(--opensans-fnt);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
   p {
     font: normal 300 1rem/1.4 var(--merriweather-fnt);
   }
   button {
-    font: normal 400 1.25rem var(--opensans-fnt);
+    font: normal 500 1rem var(--opensans-fnt);
     cursor: pointer;
     outline: none;
     width: 150px;
     height: 2.5rem;
     border: none;
     border-radius: 2px;
+    letter-spacing: 1px;
   }
 
-  /* classes */
+  ul {
+    margin-bottom: 1rem;
+    li {
+      letter-spacing: 1px;
+      font: normal 300 .9rem/1.4 var(--merriweather-fnt);
+   
+
+    }
+  }
+
+  /* ----- start: common classes -----*/
   .flex-rw-ct-ct {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .flex-cl-ct-ct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* ----- end: common classes -----*/
 
   /* body */
   body {
     background-color: var(--white-clr);
-    /* section: hero */
-    .hero {
-      width: 100%;
-      height: 400px;
-      background-color: var(--white-clr);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      object-fit: contain;
-      object-position: center;
-      /* display flex */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    font-family: (--merriweather-fnt);
 
-      /*  */
-      .hero-intro,
-      .hero-action {
-        width: 80%;
-        background-color: rgba(255, 255, 255, 0.75);
-        padding: 1rem 0;
+    /* wrapper */
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
 
-        h1,
-        p {
-          color: var(--rich-bkack-clr);
+      /* section: hero */
+      .sect-hero {
+        width: 100%;
+        height: 400px;
+        background-color: var(--white-clr);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        object-fit: contain;
+        object-position: center;
+        /* display flex */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /*  */
+        .hero-intro,
+        .hero-action {
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.75);
+          padding: 1rem;
+
+          h1,
+          p {
+            color: var(--rich-bkack-clr);
+          }
+          h1 span {
+            font-size: 2.25rem;
+          }
+          p {
+            color: var();
+          }
         }
-        h1 span {
-          font-size: 2.25rem;
+
+        /* hero intro */
+        .hero-intro {
+          /* hero para */
+          #para-hero {
+            font-weight: 400;
+            text-align: center;
+          }
         }
-        p {
-          color: var();
+
+        /* hero action */
+        .hero-action {
+          gap: 1rem;
+
+          button {
+            transition-property: background, box-shadow;
+            transition: 500ms ease-in-out;
+          }
+          /* login button */
+          #btn-login {
+            background: transparent;
+            border: 1px solid;
+            color: var(--gray-asparagus-clr);
+
+            &:hover,
+            &:focus {
+              background: var(--white-clr);
+              box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
+            }
+          }
+          /* sign up button */
+          #btn-signup {
+            background: var(--gray-asparagus-clr);
+            color: var(--white-clr);
+            border: none;
+            &:hover,
+            &:focus {
+              background: #2f3f31;
+              box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
+            }
+          }
         }
       }
 
-      /* hero intro */
-      .hero-intro {
-        /* hero para */
-        #para-hero {
-          font-weight: 400;
-          text-align: center;
+      /* section: about us */
+      .sect-about {
+        background-color: var(--flesh-clr);
+        width: 95%;
+        margin: -3.5rem auto 0;
+        padding: 2rem;
+
+        .about-para {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          text-align: justify;
         }
       }
 
-      /* hero action */
-      .hero-action {
-        gap: 2.5rem;
+      /* section: sign up */
+      .sect-signup {
+        width: 95%;
+        margin: auto;
+        padding: 1rem 2rem;
 
-        button {
-          transition-property: background, box-shadow;
-          transition: 500ms ease-in-out;
-        }
-        /* login button */
-        #btn-login {
-          background: var(--flesh-clr);
-          color: var(--gray-asparagus-clr);
-
-          &:hover {
-            background: var(--white-clr);
-            box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
-          }
-        }
-        /* sign up button */
-        #btn-signup {
-          background: var(--gray-asparagus-clr);
-          color: var(--white-clr);
-          border: none;
-          &:hover {
-            background: #2f3f31;
-            box-shadow: 2px 2px 6px -1px var(--gray-asparagus-clr);
-          }
+        p {
+          text-align: justify;
+          margin-bottom: 1rem;
         }
       }
     }
   }
-}
-
-#signup-frm {
-  height: 250vh;
-  background-color: yellow;
 }
