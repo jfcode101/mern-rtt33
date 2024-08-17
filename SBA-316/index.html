@@ -24,7 +24,7 @@
     <!-- the wrapper class — the main container -->
     <main class="wrapper">
       <!-- section: hero — the user sees this first-->
-      <section class="sect-hero flex-cl-ct-ct">
+      <section class="sect-hero flex-cl-ct-ct"  id="id-sect-hero">
         <article class="hero-intro">
           <h1>
             SBA-316 Book Lists
@@ -185,7 +185,14 @@
       </section>
     </main>
     <!-- footer -->
-    <footer></footer>
+    <footer id="id-footer"></footer>
+    <template id="id-footer-template">
+        <div class="footer-container">
+          <p><a href="https://github.com/jfcode101" target="_blank" rel="noopener noreferrer">DevJFD</a></p>
+          <p><a href="#id-sect-hero">SBA-316</a></p>
+          <p>&#169;. 2024. JFCODE101</p>
+        </div>
+    </template>
     <!-- script -->
     <script src="./scripts/index.js"></script>
   </body>

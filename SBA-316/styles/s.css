@@ -343,6 +343,20 @@ html {
         }
       }
     }
+
+    /* footer */
+    #id-footer {
+      height: 80px;
+      background-color: var(--rich-bkack-clr);
+      color: var(--white-clr);
+
+      .footer-container {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
   }
 }
 

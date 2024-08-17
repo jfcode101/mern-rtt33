@@ -181,7 +181,7 @@ formEl.addEventListener("submit", (e) => {
     // add the new user to the array
     userInfos.push(saveUserSingup);
 
-    //  // now, save the updated array back to local storage
+    // now, save the updated array back to local storage
     localStorage.setItem("userInfos", JSON.stringify(userInfos));
     // Browser Object Model to alret the user of
     alert("You have successfully created an account!");
@@ -281,9 +281,17 @@ function showBooks() {
     authorName.textContent = book.author;
     year.textContent = book.year;
 
+    // append child
     tblRow.appendChild(titleData);
     tblRow.appendChild(authorName);
     tblRow.appendChild(year);
+
+    // using child-sibling relationship
+
+    // first child
+    tblRow.firstChild.style.color = "var(--flesh-clr)";
+    // last-child
+    tblRow.lastChild.style.color = "var(--white-clr)";
 
     bookList.appendChild(tblRow);
   });
@@ -313,3 +321,17 @@ responsiveDesign();
 
 // add a {resize} event listener to the window object to add responsive design
 window.addEventListener("resize", responsiveDesign);
+
+// using DocumentFragment interface or HTML templatinf
+// with the cloneNode to create a template footer
+document.addEventListener("DOMContentLoaded", () => {
+  // get the template
+  const template = document.querySelector("#id-footer-template");
+  const footer = document.getElementById("id-footer");
+
+  // clone the template
+  const clone = document.importNode(template.content, true);
+
+  // appent the cloned content to the footer
+  footer.appendChild(clone);
+});
