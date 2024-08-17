@@ -15,9 +15,9 @@ const aboutText = [
 const signUpTexts = [
   `We're thrilled to have you here! By signing up, you'll gain access to exclusive content, special offers, and a community of like-minded individuals. Whether you’re looking to learn, connect, or explore, there's something for everyone.`,
   ` Why Sign Up?`,
-  `Get personalized recommendations`,
-  `Stay updated with the latest Books and Reading events`,
-  `Enjoy members-only perks and discounts`,
+  `Get personalized recommendations.`,
+  `Stay updated with the latest Books and Reading events.`,
+  `Enjoy members-only perks and discounts.`,
 ];
 
 // --------------- global scope variable ---------------
@@ -62,3 +62,26 @@ signUpTexts.forEach((item) => {
 
 // --------------- form ---------------
 // --------------- add event listener ---------------
+formEl.addEventListener("submit", (e) => {
+  // prevent default
+  e.preventDefault();
+  // boolean to set validity
+  let isValid = true;
+
+  // cache form values
+  const fName = document.querySelector("#id-fname").value.trim();
+  const lName = document.querySelector("#id-lname").value.trim();
+  const email = document.querySelector("#id-email").value.trim();
+  const usrName = document.getElementById("id-usrname").value.trim();
+  const pwd = document.getElementById("id-pword").value.trim();
+  const pwd2 = document.querySelector("#id-pword2").value.trim();
+
+  // clear any error that could have happened previously
+
+  // --------------- validate user inputs ---------------
+  // first name
+  //   if(fName){}
+});
+
+// error
+const errors = document.querySelectorAll(".cls-error");

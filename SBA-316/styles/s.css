@@ -219,21 +219,22 @@ html {
         /* form */
         .input-form {
           background-color: var(--white-clr);
-          padding: 1rem;
+          padding: 2rem 1rem;
           border-radius: 2px;
 
           input {
-            border: 1px solid var(--rich-bkack-clr);
+            border-bottom: 1px solid var(--rich-bkack-clr);
             display: block;
             width: 100%;
             height: 36px;
             margin-bottom: 1rem;
             transition-property: background, box-shadow;
             transition: 500ms ease-in-out;
+
             &:hover,
             &:focus {
               background: rgba(253, 229, 212, 0.5);
-              box-shadow: 2px 2px 4px var(---asparagus-clr);
+              box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
             }
           }
 
