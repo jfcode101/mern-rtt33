@@ -255,9 +255,10 @@ html {
 
       /* section: sign up */
       .sect-signup {
-        margin: auto;
-        padding: 2rem;
         background-color: var(--gray-asparagus-clr);
+
+        /* margin: auto; */
+        padding: 2rem;
         color: var(--dark-vanilla-clr);
 
         p {
@@ -305,5 +306,53 @@ html {
         }
       }
     }
+  }
+}
+
+/* media */
+@media screen and (min-width: 768px) {
+  .hero-action {
+    display: flex;
+    flex-direction: row;
+    color: red;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sect-about > *,
+  .sect-login > * {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .sect-signup {
+    form {
+      width: 500px;
+      margin: auto;
+      button {
+        display: block;
+        margin: auto;
+      }
+    }
+    p {
+      max-width: 1000px;
+      text-align: justify;
+    }
+  }
+
+  .sect-login {
+    form {
+      max-width: 500px;
+      margin: auto;
+
+      button {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  button {
+    max-width: 150px;
   }
 }

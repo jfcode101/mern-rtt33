@@ -225,6 +225,30 @@ formLoginEl.addEventListener("submit", (e) => {
 console.log(
   "The screen width = ",
   screen.width,
-  " and its height = ",
+  ", and its height = ",
   screen.height
 );
+
+console.log(
+  "The current browser width = ",
+  window.innerWidth,
+  ", and its height =  ",
+  window.innerHeight
+);
+
+//
+const heroAction = document.querySelector(".hero-action");
+
+function responsiveDesign() {
+  if (window.innerWidth >= 768) {
+    heroAction.classList.add("flex-rw-ct-ct");
+  } else if (window.innerWidth < 768) {
+    heroAction.classList.add("flex-cl-ct-ct");
+  }
+}
+
+// call resposnive design
+responsiveDesign();
+
+// add a {resize} event listener to the window object to add responsive design
+window.addEventListener("resize", responsiveDesign);

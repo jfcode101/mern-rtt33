@@ -2,7 +2,9 @@
 
 ## Description
 
-This is a simple SPA(Single Page Application) Book Listing app built using `HTML`, `CSS`, and `JavaScript`.It loads a Single `HTML` which is beautifully styled page. Depending on the user action it is dynamically updated without requirinf a full page reload.
+This is a simple SPA(Single Page Application) Book Listing app built using `HTML`, `CSS`, and `JavaScript`.It loads a Single `HTML` which is beautifully styled page. Depending on the user action it is dynamically updated without requirinf a full page reload. 
+
+It follows the  *Mobile-First Development* approach which means it prioritizes mobile devices before scaling up to larger screen starting at tablets, laptops, etcs.
 
 ##  Signup and Login Form
 
