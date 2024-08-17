@@ -141,5 +141,29 @@ formEl.addEventListener("submit", (e) => {
     isValid = false;
   }
 
-  // do something if the form is submitted
+  // object to store user input into Local Storage
+  const saveUserSingup = { fName, lName, email, usrName, pwd, pwd2 };
+
+  // ---- retrieve existing user from local storage
+  let userInfos = JSON.parse(localStorage.getItem("user")) || [];
+
+  if (!isValid) {
+    //  if any of the input field doesn't meet the requirement return
+    return;
+  } else {
+    // add the new user to the array
+    userInfos.push(saveUserSingup);
+    alert("You have successfully created an account!");
+  }
+
+  // now, savae the updated array back to local storage
+  localStorage.setItem("userInfos", JSON.stringify(saveUserSingup));
+
+  // clear the form after submission
+  formEl.reset();
+
+  // display them
+  alert("form submitted");
 });
+
+//  function that

@@ -7,7 +7,7 @@
     <meta
       name="description"
       content="SBA-316 : This simple Online Book List Single Page Application provides users with a seamless browsing experience, 
-      allowing them to create an account, login, search, filter, and view from a collection of 10 books and resources using a clean 
+      allowing them to create an account, login, search, filter, and view from a collection of must-read books and resources using a clean 
       and responsive interface built HTML, CSS, and Vanilla JavaScropt"
     />
     <meta name="keywords" content="Online Library, " />
@@ -31,7 +31,7 @@
             <span class="material-symbols-rounded"> library_books </span>
           </h1>
           <p id="para-hero">
-            A carefully curated collection of 10 must read books in 2024 at your
+            A carefully curated collection of must-read books in 2024 at your
             fingertips.
           </p>
         </article>
@@ -110,6 +110,13 @@
 
           <button type="submit" id="btn-submit">submit</button>
         </form>
+        <!-- 
+            this {article} will appear when the user has successfull created their account 
+          -->
+        <article id="artc-sigin-success">
+          <p id="id-para-success"></p>
+          <button type="button" id="id-btn-ok">OK</button>
+        </article>
       </section>
       <!-- section: bookList -->
       <section id="books"></section>
