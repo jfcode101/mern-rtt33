@@ -25,6 +25,7 @@ const sectHero = document.querySelector(".sect-hero");
 const sectAbout = document.getElementById("id-sect-about");
 const artcSignUp = document.querySelector("#id-artc-signup");
 const formEl = document.getElementById("id-input-form");
+const formLoginEl = document.getElementById("id-login-form");
 
 // set the background image of section hero
 sectHero.style.backgroundImage = `url(${images[0]})`;
@@ -60,8 +61,8 @@ signUpTexts.forEach((item) => {
   }
 });
 
-// --------------- form ---------------
-// --------------- add {submit} event listener to the form ---------------
+// --------------- forms ---------------
+// --------------- start: add {submit} event listener to the form  that creates an acount ---------------
 formEl.addEventListener("submit", (e) => {
   // prevent default
   e.preventDefault();
@@ -157,7 +158,9 @@ formEl.addEventListener("submit", (e) => {
 
     //  // now, save the updated array back to local storage
     localStorage.setItem("userInfos", JSON.stringify(userInfos));
-    console.log(userInfos);
+    // Browser Object Model to alret the user of
+    alert("You have successfully created an account!");
+    // Browser Object Model to console the paragraph
 
     // cache some element from html
     const artcSuccess = document.querySelector("#artc-sigin-success");
@@ -167,6 +170,8 @@ formEl.addEventListener("submit", (e) => {
     // use the variable
     artcSuccess.style.display = "flex";
     paraSuccess.textContent = "You have successfully created an account!";
+    // Browser Object Model to console the paragraph
+    console.log(paraSuccess);
 
     // -------- click event when the user click on the ok button --------
     btnOK.addEventListener("click", () => {
@@ -185,4 +190,41 @@ formEl.addEventListener("submit", (e) => {
   //   alert("form submitted");
 });
 
-//  function that 
+// --------------- end: add {submit} event listener to the form  that creates an acount ---------------
+
+// --------------- start: add {submit} event listener to the form  that logs in the user ---------------
+formLoginEl.addEventListener("submit", (e) => {
+  // prevent default
+  e.preventDefault();
+
+  const userNameLogin = document.getElementById("id-usrlogin").value;
+  const pwdLogin = document.querySelector("#id-usrpwd").value;
+
+  // get the user infos stored into the local storage
+  const storedInfo = JSON.parse(localStorage.getItem("userInfos")) || [];
+
+  const user = storedInfo.find(
+    (user) => user.usrName === userNameLogin && user.pwd === pwdLogin
+  );
+
+  // check if stored infos matches user info
+  if (user) {
+    alert("Login successful!");
+    console.log("Login successful!");
+  } else {
+    alert("Invalid email or password. Try again!");
+    console.log("Invalid email or password. Try again!");
+  }
+});
+
+// --------------- end: add {submit} event listener to the form  that logs in the user ---------------
+
+//  function that
+
+// Browser Object Model to alret user
+console.log(
+  "The screen width = ",
+  screen.width,
+  " and its height = ",
+  screen.height
+);

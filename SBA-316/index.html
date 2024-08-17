@@ -37,10 +37,10 @@
         </article>
         <div class="hero-action flex-cl-ct-ct">
           <button type="submit" id="id-btn-login" class="btn-login">
-            <a href="#">Log In</a>
+            <a href="#id-login"">Log In</a>
           </button>
           <button type="submit" id="id-btn-signup" class="btn-signup">
-            <a href="#signup">Sign Up</a>
+            <a href="#id-signup">Sign Up</a>
           </button>
         </div>
       </section>
@@ -50,7 +50,7 @@
         <h2>Our Mission</h2>
       </section>
       <!-- section: sign up form -->
-      <section class="sect-signup" id="signup">
+      <section class="sect-signup" id="id-signup">
         <article class="artc-signup" id="id-artc-signup">
           <span class="material-symbols-rounded symbol-span">
             diversity_3
@@ -122,6 +122,37 @@
           <button type="button" id="id-btn-ok" class="btn-login">OK</button>
         </article>
       </section>
+      <!-- section: log in -->
+       <section id="id-login" class="sect-login">
+        <article class="artc-signup" id="id-artc-login">
+            <span class="material-symbols-rounded symbol-span">
+                account_circle
+                </span>
+            <h2>Welcome Back!</h2>
+            <p>
+                We're thrilled to see you again! Dive into your personalized book list, where every title is a new adventure waiting to unfold. 
+                Whether you're looking to discover your next favorite read or revisit a cherished classic, 
+                we're here to make your reading journey enjoyable and inspiring.
+            </p>
+          </article>
+        <form action="" class="input-form" id="id-login-form">
+            <input
+            type="text"
+            name="usrlogin"
+            id="id-usrlogin"
+            placeholder="username"
+            required
+          />
+          <input
+          type="password"
+          name="usrpwd"
+          id="id-usrpwd"
+          placeholder="password"
+          required
+        />
+        <button type="submit" id="btn-login" class="btn-login">Log in</button>
+        </form>
+       </section>
       <!-- section: bookList -->
       <section id="books"></section>
     </main>
