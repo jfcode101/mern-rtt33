@@ -33,13 +33,13 @@ The user is able to create an account and login using theis credentials.
 
 The image shows how the whole page will look like when the user is logged in on a desktop.
 
-![desktop image](/images/desktop.png)
+![desktop image](./images/desktop.png)
 
 2. **Mobile**
 
 The image shows how the whole page will look like when the user is not logged in on mobile device.
 
-![Mobile image](/images/mobile.png)
+![Mobile image](./images/mobile.png)
 
 ## links
 
