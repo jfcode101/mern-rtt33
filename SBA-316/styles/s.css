@@ -61,11 +61,25 @@ html {
   ul {
     margin-bottom: 1rem;
     li {
+      list-style: none;
       letter-spacing: 1px;
-      font: normal 300 .9rem/1.4 var(--merriweather-fnt);
-   
-
+      font: normal 300 0.9rem/1.4 var(--merriweather-fnt);
     }
+  }
+
+  input {
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    padding: 0 1rem;
+    font: normal 300 1rem var(--merriweather-fnt);
+  }
+  /* symbol span */
+  .symbol-span {
+    font-size: 100px;
+    display: block;
+    text-align: center;
   }
 
   /* ----- start: common classes -----*/
@@ -91,25 +105,20 @@ html {
     .wrapper {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      /* gap: 2rem; */
 
       /* section: hero */
       .sect-hero {
         width: 100%;
-        height: 400px;
+        height: 450px;
         background-color: var(--white-clr);
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
         object-fit: contain;
         object-position: center;
-        /* display flex */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
 
-        /*  */
+        /*  hero - intro && action */
         .hero-intro,
         .hero-action {
           width: 100%;
@@ -142,6 +151,7 @@ html {
           gap: 1rem;
 
           button {
+            width: 250px;
             transition-property: background, box-shadow;
             transition: 500ms ease-in-out;
           }
@@ -175,25 +185,79 @@ html {
       .sect-about {
         background-color: var(--flesh-clr);
         width: 95%;
-        margin: -3.5rem auto 0;
+        margin: -2rem auto 0;
         padding: 2rem;
-
+        border: 5px solid var(--white-clr);
+        border-bottom: 0;
+        color: var(--gray-asparagus-clr);
         .about-para {
           font-size: 1rem;
           margin-bottom: 1rem;
           text-align: justify;
         }
+        .symbol-span {
+          margin-bottom: 1rem;
+        }
       }
 
       /* section: sign up */
       .sect-signup {
-        width: 95%;
         margin: auto;
-        padding: 1rem 2rem;
+        padding: 2rem;
+        background-color: var(--gray-asparagus-clr);
+        color: var(--dark-vanilla-clr);
 
         p {
+          width: 95%;
+          margin: 0 auto 1rem;
           text-align: justify;
-          margin-bottom: 1rem;
+        }
+        ul {
+          text-align: center;
+        }
+
+        /* form */
+        .input-form {
+          background-color: var(--white-clr);
+          padding: 1rem;
+          border-radius: 2px;
+
+          input {
+            border: 1px solid var(--rich-bkack-clr);
+            display: block;
+            width: 100%;
+            height: 36px;
+            margin-bottom: 1rem;
+            transition-property: background, box-shadow;
+            transition: 500ms ease-in-out;
+            &:hover,
+            &:focus {
+              background: rgba(253, 229, 212, 0.5);
+              box-shadow: 2px 2px 4px var(---asparagus-clr);
+            }
+          }
+
+          /* error class */
+          .cls-error {
+            display: block;
+            color: red;
+            margin: -0.5rem 0 1rem;
+          }
+
+          #btn-submit {
+            width: 100%;
+            background: var(--gray-asparagus-clr);
+            color: var(--white-clr);
+            border: none;
+            transition-property: background, box-shadow;
+            transition: 500ms ease-in-out;
+
+            &:hover,
+            &:focus {
+              background: #2f3f31;
+              box-shadow: 2px 2px 4px var(--gray-asparagus-clr);
+            }
+          }
         }
       }
     }

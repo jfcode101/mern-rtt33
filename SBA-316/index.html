@@ -24,7 +24,7 @@
     <!-- the wrapper class — the main container -->
     <main class="wrapper">
       <!-- section: hero — the user sees this first-->
-      <section class="sect-hero">
+      <section class="sect-hero flex-cl-ct-ct">
         <article class="hero-intro">
           <h1>
             SBA-316 Book Lists
@@ -42,45 +42,87 @@
       </section>
       <!-- section: about us-->
       <section class="sect-about" id="id-sect-about">
-        <h2>About us</h2>
+        <span class="material-symbols-rounded symbol-span"> lightbulb </span>
+        <h2>Our Mission</h2>
       </section>
       <!-- section: sign up form -->
       <section class="sect-signup" id="signup">
         <article class="artc-signup" id="id-artc-signup">
+          <span class="material-symbols-rounded symbol-span">
+            diversity_3
+          </span>
           <h2>Join Our Community</h2>
         </article>
-        <form action="">
-          <fieldset>
-            <legend>Your name</legend>
-            <input
-              type="text"
-              name="fname"
-              id="fname"
-              placeholder="First name"
-            />
-            <input
-              type="text"
-              name="lname"
-              id="lname"
-              placeholder="last name"
-            />
-          </fieldset>
+        <form action="" class="input-form" id="id-input-form">
+          <input
+            type="text"
+            name="fname"
+            id="id-fname"
+            placeholder="First name"
+            minlength="2"
+            maxlength="50"
+            pattern="[A-Za-z]"
+            title="Please enter a valid name. You can only use alphabets."
+            required
+          />
+          <span class="cls-error" id="fname-err"></span>
+          <input
+            type="text"
+            name="lname"
+            id="id-lname"
+            placeholder="last name"
+            minlength="2"
+            maxlength="50"
+            pattern="[A-Za-z]"
+            title="Please enter a valid name. You can only use alphabets."
+            required
+          /><span class="cls-error" id="lname-err"></span>
+
           <input
             type="email"
             name="email"
             id="id-email"
             placeholder="example@email.com"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Please enter a valid email address (e.g., example@domain.com)"
+            required
           />
-          <fieldset>
-            <legend>choose a password</legend>
-            <input
-              type="password"
-              name="pword"
-              id="pword"
-              placeholder="password"
-            />
-            <input type="password" name="pword2" id="pword-2" />
-          </fieldset>
+          <span class="cls-error" id="email-err"></span>
+
+          <input
+            type="text"
+            name="usrname"
+            id="id-usrname"
+            placeholder="username"
+            pattern="[a-zA-Z0-9]{6,12}"
+            title="Username can includes letters and numbes. It must be between 6 to 12 characters."
+            required
+          />
+          <span class="cls-error" id="uname-err"></span>
+
+          <input
+            type="password"
+            name="pword"
+            id="pword"
+            placeholder="password"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+            title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+            required
+          />
+          <span class="cls-error" id="pwd-err"></span>
+
+          <input
+            type="password"
+            name="pword2"
+            id="pword-2"
+            placeholder="confirm your password"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+            title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+            required
+          />
+          <span class="cls-error" id="pwd2-err"></span>
+
+          <button type="submit" id="btn-submit">submit</button>
         </form>
       </section>
       <!-- section: bookList -->

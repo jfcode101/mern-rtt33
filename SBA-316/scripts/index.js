@@ -20,15 +20,17 @@ const signUpTexts = [
   `Enjoy members-only perks and discounts`,
 ];
 
-// global scope variable
+// --------------- global scope variable ---------------
 const sectHero = document.querySelector(".sect-hero");
 const sectAbout = document.getElementById("id-sect-about");
 const artcSignUp = document.querySelector("#id-artc-signup");
+const formEl = document.getElementById("id-input-form");
 
 // set the background image of section hero
 sectHero.style.backgroundImage = `url(${images[0]})`;
 
-// insert paragraphs in the about section
+// insert paragraphs in the about section by first
+// for each to iterate over elements of {aboutText} array
 aboutText.forEach((txt) => {
   const pEl = document.createElement("p");
   pEl.classList.add("about-para");
@@ -57,3 +59,6 @@ signUpTexts.forEach((item) => {
     signUpUl.appendChild(liEl);
   }
 });
+
+// --------------- form ---------------
+// --------------- add event listener ---------------
