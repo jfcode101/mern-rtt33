@@ -20,12 +20,37 @@ const signUpTexts = [
   `Enjoy members-only perks and discounts.`,
 ];
 
+// book list
+const books = [
+  { title: "The Alchemist", author: "Paulo Coelho", year: 1988 },
+  { title: "Brave New World", author: "Aldous Huxley", year: 1932 },
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+  { title: "The Catcher in the Rye", author: "J.D. Salinger", year: 1951 },
+  { title: "Moby-Dick", author: "Herman Melville", year: 1851 },
+  { title: "War and Peace", author: "Leo Tolstoy", year: 1869 },
+  { title: "The Odyssey", author: "Homer", year: "circa 8th century BC" },
+  { title: "The Hobbit", author: "J.R.R. Tolkien", year: 1937 },
+  { title: "Fahrenheit 451", author: "Ray Bradbury", year: 1953 },
+  { title: "Pride and Prejudice", author: "Jane Austen", year: 1813 },
+  { title: "The Picture of Dorian Gray", author: "Oscar Wilde", year: 1890 },
+  { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky", year: 1880 },
+  { title: "The Bell Jar", author: "Sylvia Plath", year: 1963 },
+  { title: "The Grapes of Wrath", author: "John Steinbeck", year: 1939 },
+  { title: "Wuthering Heights", author: "Emily Brontë", year: 1847 },
+  { title: "The Road", author: "Cormac McCarthy", year: 2006 },
+  { title: "The Fault in Our Stars", author: "John Green", year: 2012 },
+  { title: "The Book Thief", author: "Markus Zusak", year: 2005 },
+  { title: "The Night Circus", author: "Erin Morgenstern", year: 2011 },
+  { title: "The Shadow of the Wind", author: "Carlos Ruiz Zafón", year: 2001 },
+];
+
 // --------------- global scope variable ---------------
 const sectHero = document.querySelector(".sect-hero");
 const sectAbout = document.getElementById("id-sect-about");
 const artcSignUp = document.querySelector("#id-artc-signup");
 const formEl = document.getElementById("id-input-form");
 const formLoginEl = document.getElementById("id-login-form");
+const sectBooks = document.querySelector(".sect-books");
 
 // set the background image of section hero
 sectHero.style.backgroundImage = `url(${images[0]})`;
@@ -211,6 +236,8 @@ formLoginEl.addEventListener("submit", (e) => {
   if (user) {
     alert("Login successful!");
     console.log("Login successful!");
+    // call show books
+    showBooks();
   } else {
     alert("Invalid email or password. Try again!");
     console.log("Invalid email or password. Try again!");
@@ -236,9 +263,43 @@ console.log(
   window.innerHeight
 );
 
-//
-const heroAction = document.querySelector(".hero-action");
+// function to show the books
+function showBooks() {
+  // function scope variable
+  const bookList = document.querySelector("#id-tbl-body");
+  bookList.innerHTML = "";
 
+  books.forEach((book) => {
+    // initialize forEach block level variable
+    const tblRow = document.createElement("tr");
+    const titleData = document.createElement("td");
+    const authorName = document.createElement("td");
+    const year = document.createElement("td");
+
+    // add data to table celss
+    titleData.textContent = book.title;
+    authorName.textContent = book.author;
+    year.textContent = book.year;
+
+    tblRow.appendChild(titleData);
+    tblRow.appendChild(authorName);
+    tblRow.appendChild(year);
+
+    bookList.appendChild(tblRow);
+  });
+
+  // show section {sectBooks}
+  sectBooks.style.display = "block";
+}
+// add event listener to done button
+const doneBtn = document.getElementById("id-btn-done");
+doneBtn.addEventListener("click", () => {
+  sectBooks.style.display = "none";
+});
+
+// heroAction to change
+const heroAction = document.querySelector(".hero-action");
+// function to add some responsiveness to the {heroAction} class
 function responsiveDesign() {
   if (window.innerWidth >= 768) {
     heroAction.classList.add("flex-rw-ct-ct");
