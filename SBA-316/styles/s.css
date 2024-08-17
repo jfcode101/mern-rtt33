@@ -8,13 +8,12 @@
   --opensans-fnt: "Open Sans", system-ui;
   /* color */
   --white-clr: #fff;
-
-  /* light mode colors */
   --dark-vanilla-clr: #d6cc99;
   --flesh-clr: #fde5d4;
-  /* dark mode colors */
   --rich-bkack-clr: #001524;
   --gray-asparagus-clr: #445d48;
+  --red-clr: #a91d36;
+  --error-clr: rgba(169, 29, 54, 0.2);
 }
 
 * {
@@ -230,6 +229,7 @@ html {
             margin-bottom: 1rem;
             transition-property: background, box-shadow;
             transition: 500ms ease-in-out;
+            color: var(--gray-asparagus-clr);
 
             &:hover,
             &:focus {
@@ -241,8 +241,9 @@ html {
           /* error class */
           .cls-error {
             display: block;
-            color: red;
+            color: var(--red-clr);
             margin: -0.5rem 0 1rem;
+            font: normal 300 0.75rem/1.2 var(--merriweather-fnt);
           }
 
           #btn-submit {
@@ -252,6 +253,7 @@ html {
             border: none;
             transition-property: background, box-shadow;
             transition: 500ms ease-in-out;
+            margin-top: 1rem;
 
             &:hover,
             &:focus {

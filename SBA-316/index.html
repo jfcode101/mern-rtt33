@@ -59,32 +59,24 @@
             name="fname"
             id="id-fname"
             placeholder="First name"
-            minlength="2"
-            maxlength="50"
-            pattern="[A-Za-z]"
-            title="Please enter a valid name. You can only use alphabets."
             required
           />
           <span class="cls-error" id="fname-err"></span>
+
           <input
             type="text"
             name="lname"
             id="id-lname"
             placeholder="last name"
-            minlength="2"
-            maxlength="50"
-            pattern="[A-Za-z]"
-            title="Please enter a valid name. You can only use alphabets."
             required
-          /><span class="cls-error" id="lname-err"></span>
+          />
+          <span class="cls-error" id="lname-err"></span>
 
           <input
             type="email"
             name="email"
             id="id-email"
             placeholder="example@email.com"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            title="Please enter a valid email address (e.g., example@domain.com)"
             required
           />
           <span class="cls-error" id="email-err"></span>
@@ -94,8 +86,6 @@
             name="usrname"
             id="id-usrname"
             placeholder="username"
-            pattern="[a-zA-Z0-9]{6,12}"
-            title="Username can includes letters and numbes. It must be between 6 to 12 characters."
             required
           />
           <span class="cls-error" id="uname-err"></span>
@@ -105,8 +95,6 @@
             name="pword"
             id="id-pword"
             placeholder="password"
-            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
-            title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character."
             required
           />
           <span class="cls-error" id="pwd-err"></span>
@@ -116,8 +104,6 @@
             name="pword2"
             id="id-pword-2"
             placeholder="confirm your password"
-            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
-            title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character."
             required
           />
           <span class="cls-error" id="pwd2-err"></span>

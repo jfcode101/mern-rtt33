@@ -68,20 +68,78 @@ formEl.addEventListener("submit", (e) => {
   // boolean to set validity
   let isValid = true;
 
-  // cache form values
+  // get form inputs
   const fName = document.querySelector("#id-fname").value.trim();
   const lName = document.querySelector("#id-lname").value.trim();
   const email = document.querySelector("#id-email").value.trim();
   const usrName = document.getElementById("id-usrname").value.trim();
   const pwd = document.getElementById("id-pword").value.trim();
-  const pwd2 = document.querySelector("#id-pword2").value.trim();
+  const pwd2 = document.querySelector("#id-pword-2").value.trim();
 
   // clear any error that could have happened previously
+  const errors = document.querySelectorAll(".cls-error");
+  errors.forEach((er) => {
+    er.textContent = "";
+    document
+      .querySelectorAll("input")
+      .forEach((inpt) => (inpt.style.background = "transparent"));
+  });
 
   // --------------- validate user inputs ---------------
-  // first name
-  //   if(fName){}
-});
+  // validate first name
+  const nmPattrn = /[A-Za-z]/;
+  if (fName.length < 3 || fName.length > 50 || !nmPattrn.test(fName)) {
+    document.getElementById("fname-err").textContent =
+      "First Name must be at least 3 characters long, and less than 50 characters.";
+    document.querySelector("#id-fname").style.background = "var(--error-clr)";
+    isValid = false;
+  }
 
-// error
-const errors = document.querySelectorAll(".cls-error");
+  // validate last name
+  if (lName.length < 3 || lName.length > 50 || !nmPattrn.test(lName)) {
+    document.getElementById("lname-err").textContent =
+      "Last Name must be at least 3 characters long, and less than 50 characters.";
+    document.querySelector("#id-lname").style.background = "var(--error-clr)";
+    isValid = false;
+  }
+
+  // validate email
+  const emPattrn = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emPattrn.test(email)) {
+    document.getElementById("email-err").textContent =
+      "Please enter a valid email address.";
+    document.querySelector("#id-email").style.background = "var(--error-clr)";
+    isValid = false;
+  }
+
+  // validate username
+  const unmPattrn = /[a-zA-Z0-9]{6,12}/;
+  if (usrName.length < 6 || usrName.length >= 12 || !unmPattrn.test(usrName)) {
+    document.querySelector(
+      "#uname-err"
+    ).textContent = `User name must be at least 6 characters and at maximum 12 characters long. 
+     You can include numbers. `;
+    document.querySelector("#id-usrname").style.background = "var(--error-clr)";
+    isValid = false;
+  }
+
+  // validate password - it has to be at least 6 characters
+  if (pwd.length < 6) {
+    document.getElementById("pwd-err").textContent =
+      "Password must be at least 6 characters long.";
+    document.getElementById("id-pword").style.background = "var(--error-clr)";
+    document.getElementById("id-pword-2").style.background = "var(--error-clr)";
+
+    isValid = false;
+  }
+
+  // check if the password matches the confirmation password
+  if (pwd !== pwd2) {
+    document.getElementById("pwd2-err").textContent =
+      "Passwords do not match. Please try again!";
+    document.getElementById("id-pword-2").style.background = "var(--error-clr)";
+    isValid = false;
+  }
+
+  // do something if the form is submitted
+});
