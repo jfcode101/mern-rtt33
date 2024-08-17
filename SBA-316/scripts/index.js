@@ -8,7 +8,5 @@ const SectHero = document.querySelector(".hero");
 
 // set the background image of section hero
 SectHero.style.backgroundImage = `url(${images[0]})`;
-// SectHero.style.backgroundRepeat = "no-repeat";
-SectHero.style.backgroundSize = "100%";
 
 console.log(SectHero);
